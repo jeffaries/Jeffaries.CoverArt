@@ -10,6 +10,7 @@ using SkiaSharp;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Jeffaries.CoverArt
 {
@@ -19,7 +20,7 @@ namespace Jeffaries.CoverArt
         public Plugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer, ILogger logger) : base(applicationPaths, xmlSerializer)
         {
             this.logger = logger;
-            logger.Info("Jeff's CoverArt : C'est parti!");
+            //logger.Info("Jeff's CoverArt : C'est parti!");
         }
         public override Guid Id => Guid.Parse("89729EB4-4110-4FB8-BD78-9FD20C05BB51");
         public override string Name { get { return "Jeff's CoverArt"; } }
@@ -30,10 +31,10 @@ namespace Jeffaries.CoverArt
         {
             return Task.Run(() =>
             {
-                logger.Info("EnhanceImageAsync : Size of  {0} : {1}x{2}", inputFile, item.Width, item.Height);
+                //logger.Info("EnhanceImageAsync : Size of {0} : {1}x{2}", inputFile, item.Width, item.Height);
                 if (item.MediaType == MediaType.Video && imageType == ImageType.Primary && 5500 > item.Width && item.Width > 2500)
                 {
-                    logger.Info("EnhanceImageAsync : Converting {0} to {1}", inputFile, outputFile);
+                    //logger.Info("EnhanceImageAsync : Converting {0} to {1}", inputFile, outputFile);
                     SKBitmap bitmap = SKBitmap.Decode(inputFile);
                     //ImageSize newSize = GetEnhancedImageSize(item, imageType, imageIndex, new ImageSize(bitmap.Width, bitmap.Height));
 
@@ -46,7 +47,7 @@ namespace Jeffaries.CoverArt
                     size.Height = (int)((double)bitmap.Height / 8f);
                     size.Width = (int)((double)bmp.Width * ((double)size.Height / (double)bmp.Height));
                     var smallIcon = bmp.Resize(size, SKFilterQuality.High);
-                    logger.Info("EnhanceImageAsync : Icon -> {0} x {1}", smallIcon.Width, smallIcon.Height);
+                    //logger.Info("EnhanceImageAsync : Icon -> {0} x {1}", smallIcon.Width, smallIcon.Height);
                     canvas.DrawImage(SKImage.FromBitmap(smallIcon), bitmap.Width - smallIcon.Width - margin, bitmap.Height - smallIcon.Height - margin);
                     canvas.Flush();
 
@@ -60,7 +61,7 @@ namespace Jeffaries.CoverArt
                     image.Dispose();
                     canvas.Dispose();
                     bitmap.Dispose();
-                    logger.Info("EnhanceImageAsync : Convertion {0} to {1} done!", inputFile, outputFile);
+                    //logger.Info("EnhanceImageAsync : Convertion {0} to {1} done!", inputFile, outputFile);
                 }
                 else
                 {
@@ -77,13 +78,13 @@ namespace Jeffaries.CoverArt
 
         public EnhancedImageInfo GetEnhancedImageInfo(BaseItem item, string inputFile, ImageType imageType, int imageIndex)
         {
-            logger.Info("GetEnhancedImageInfo: {0}", inputFile);
+            //logger.Info("GetEnhancedImageInfo: {0}", inputFile);
             return new EnhancedImageInfo() { RequiresTransparency = false };
         }
 
         public ImageSize GetEnhancedImageSize(BaseItem item, ImageType imageType, int imageIndex, ImageSize originalImageSize)
         {
-            logger.Info("GetEnhancedImageSize");
+            //logger.Info("GetEnhancedImageSize");
             double resizeFactor = 1;
             //if (item.MediaType== MediaType.Video && imageType == ImageType.Primary)
             //{
