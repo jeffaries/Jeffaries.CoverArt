@@ -1,0 +1,10 @@
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\bin\Debug\netstandard2.0\Jeffaries.CoverArt.deps.json
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\bin\Debug\netstandard2.0\Jeffaries.CoverArt.dll
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\bin\Debug\netstandard2.0\Jeffaries.CoverArt.pdb
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.Properties.Resources.resources
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.csproj.GenerateResource.cache
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.AssemblyInfoInputs.cache
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.AssemblyInfo.cs
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.csproj.CoreCompileInputs.cache
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.dll
+C:\Users\jfgue\Source\Repos\jeffaries\Jeffaries.CoverArt\Jeffaries.CoverArt\obj\Debug\netstandard2.0\Jeffaries.CoverArt.pdb

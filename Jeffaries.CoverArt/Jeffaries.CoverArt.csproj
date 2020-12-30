@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;</TargetFrameworks>
@@ -25,5 +25,9 @@
 	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="copy $(OutDir)$(TargetFileName) Z:\var\lib\docker\volumes\329c6d98c51212b94a7ae7ebe4636417475486d02037816d8281e2746806f47c\_data\plugins\" />
+	</Target>
 
 </Project>

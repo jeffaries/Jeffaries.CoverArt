@@ -37,16 +37,17 @@ namespace Jeffaries.CoverArt
                     SKBitmap bitmap = SKBitmap.Decode(inputFile);
                     //ImageSize newSize = GetEnhancedImageSize(item, imageType, imageIndex, new ImageSize(bitmap.Width, bitmap.Height));
 
+                    var margin = (int)(bitmap.Height / 50f);
 
                     //var toBitmap = bitmap.Resize(new SKSizeI((int)Math.Round(newSize.Width), (int)Math.Round(newSize.Height)), SKFilterQuality.High);
                     var canvas = new SKCanvas(bitmap);
                     var bmp = SKBitmap.Decode(Resources._4KHDR);
                     SKSizeI size = new SKSizeI();
-                    size.Height = (int)((double)bitmap.Height / 7);
+                    size.Height = (int)((double)bitmap.Height / 8f);
                     size.Width = (int)((double)bmp.Width * ((double)size.Height / (double)bmp.Height));
                     var smallIcon = bmp.Resize(size, SKFilterQuality.High);
                     logger.Info("EnhanceImageAsync : Icon -> {0} x {1}", smallIcon.Width, smallIcon.Height);
-                    canvas.DrawImage(SKImage.FromBitmap(smallIcon), bitmap.Width - smallIcon.Width - 5, bitmap.Height - smallIcon.Height - 5);
+                    canvas.DrawImage(SKImage.FromBitmap(smallIcon), bitmap.Width - smallIcon.Width - margin, bitmap.Height - smallIcon.Height - margin);
                     canvas.Flush();
 
                     var image = SKImage.FromBitmap(bitmap);
