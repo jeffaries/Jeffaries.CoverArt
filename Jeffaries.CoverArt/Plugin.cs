@@ -9,6 +9,7 @@ using MediaBrowser.Model.Serialization;
 using SkiaSharp;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -34,6 +35,9 @@ namespace Jeffaries.CoverArt
                 //logger.Info("EnhanceImageAsync : Size of {0} : {1}x{2}", inputFile, item.Width, item.Height);
                 if (item.MediaType == MediaType.Video && imageType == ImageType.Primary && 5500 > item.Width && item.Width > 2500)
                 {
+                    var audios = item.GetMediaStreams().FindAll(o => o.Type == MediaStreamType.Audio);
+                    logger.Info("Audios for {0} : {1}", String.Join(", ", item.Name, audios.Select(o => o.Language)));
+
                     //logger.Info("EnhanceImageAsync : Converting {0} to {1}", inputFile, outputFile);
                     SKBitmap bitmap = SKBitmap.Decode(inputFile);
                     //ImageSize newSize = GetEnhancedImageSize(item, imageType, imageIndex, new ImageSize(bitmap.Width, bitmap.Height));
